@@ -1,0 +1,26 @@
+Decisions and Challenges – NewsTest
+
+Development Decisions:
+
+1. Architecture:
+I chose to use the Clean MVVM architecture to keep the codebase organized and maintainable. This setup made the project easier to scale and simplified testing and debugging.
+
+2. Minimum iOS Version:
+The app targets iOS 16.0 and above. This allowed me to use modern Swift features such as async/await and the latest improvements in SwiftUI.
+
+3. Offline Mode:
+To improve the user experience, I implemented offline support using CoreData. This ensures users can still access previously viewed news articles even without an internet connection.
+
+4. Pagination:
+I added pagination to efficiently handle large amount of news content. By loading articles in smaller parts, the app maintains smooth scrolling and uses memory more effectively.
+
+Challenges Faced:
+
+1. Image Loading Issue:
+I ran into an issue where some images weren’t loading correctly. After checking the API responses and verifying the image URLs, I found the problem was related to SwiftUI’s AsyncImage.
+
+Solution:
+To fix it, I made sure the image URLs were valid and tested them directly. I also added a fallback to display an error image if loading fails, ensuring the UI remains clean and informative.
+
+Conclusion:
+Overall, development went smoothly. All features were implemented as planned, and the app performs reliably. The core functionality of browsing and reading news is in place, with the added bonus of offline access and efficient pagination.
