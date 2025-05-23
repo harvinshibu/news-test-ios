@@ -14,12 +14,12 @@ final class NewsUsecase: ObservableObject {
     @Published var totalPages: Int = 5;
     @Published var currentPage: Int = 1;
     
-    func getNewsList(query: String, page: Int) {
+    func getNewsList(query: String) {
         Task { @MainActor in
             isLoading = currentPage == 1
             error = nil
         }
-        let url = "\(AppUrls.BASE_URL)\(AppUrls.GET_NEWS_LIST(query: query, page: page))"
+        let url = "\(AppUrls.BASE_URL)\(AppUrls.GET_NEWS_LIST(query: query, page: currentPage))"
         
         APIManager.shared.get(urlString: url, responseType: NewsListResponse.self) { result in
             switch result {

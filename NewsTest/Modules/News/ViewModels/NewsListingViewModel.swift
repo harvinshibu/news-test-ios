@@ -40,7 +40,7 @@ final class NewsListingViewModel: ObservableObject {
                     await MainActor.run {
                         self.isOnline = true
                     }
-                     self.usecase.getNewsList(query: "bitcoin", page: 1)
+                     self.usecase.getNewsList(query: "bitcoin")
                 } else {
                     await MainActor.run {
                         self.isOnline = false
